@@ -1,0 +1,43 @@
+﻿@page
+@model PayMeWithRocksUI.Areas.MerchantUsers.Pages.IndexModel
+
+@{
+}
+
+<h1>Merchant Users</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MerchantUsers[0].UserEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MerchantUsers[0].UserRole)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MerchantUsers[0].AssignedMerchant)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.MerchantUsers)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserRole)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssignedMerchant)
+                </td>
+                <td>
+                    <a class="btn btn-primary" role="button" asp-page="Edit" asp-route-userId="@item.UserId">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

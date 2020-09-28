@@ -1,0 +1,30 @@
+﻿@page  "{userId}"
+@model PayMeWithRocksUI.Areas.MerchantUsers.Pages.EditModel
+@{
+    ViewData["Title"] = "Edit Merchant User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit User</h1>
+
+<form method="post">
+    @Html.HiddenFor(m => m.MerchantUser.UserId)
+    <div class="form-group">
+        @Html.LabelFor(x => x.MerchantUser.UserEmail)
+        @Html.TextBoxFor(m => m.MerchantUser.UserEmail, new { @class = "form-control", @type = "email", disabled = "disabled" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.MerchantUser.UserId)
+        @Html.TextBoxFor(m => m.MerchantUser.UserId, new { @class = "form-control", disabled = "disabled" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Roles)
+        <select class="form-control" asp-for="@Model.MerchantUser.Role" asp-items="Model.Roles"><option selected value="">--- Select a role ---</option></select>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Merchants)
+        <select class="form-control" asp-for="@Model.MerchantUser.MerchantId" asp-items="Model.Merchants"><option selected value="">--- Select a merchant ---</option></select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
