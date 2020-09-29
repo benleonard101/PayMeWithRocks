@@ -4,3 +4,9 @@
 Simple .net core application that implements clean architecture.
 
 WebUI > .Net core Web Application that uses identity for user access.
+
+# Application components
+TODO
+
+# Integration Tests
+TODO
