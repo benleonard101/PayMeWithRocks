@@ -43,7 +43,7 @@ jobs:
       run: sudo update-ca-certificates --fresh
       
     - name: Application Integration Tests
-      run: dotnet test --filter FullyQualifiedName~PayMeWithRocks.Application.IntegrationTests --configuration Release --no-build
+      run: dotnet test v=normal --filter FullyQualifiedName~PayMeWithRocks.Application.IntegrationTests --configuration Release --no-build
       
     - name: Dump mssql docker logs after tests
       run: docker logs msssql
