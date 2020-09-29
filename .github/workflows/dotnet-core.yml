@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Run sudo commands
+      run: sudo update-ca-certificates --fresh
       
     - name: App Settings Variable Substitution
       uses: microsoft/variable-substitution@v1
