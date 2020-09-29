@@ -19,7 +19,7 @@ jobs:
       with:
         files: '**/appsettings.json'
       env:
-        ConnectionStrings.DefaultConnection: 'Server=localhost;user id=sa;password=sqlPw3$secure'
+        ConnectionStrings.DefaultConnection: 'Server=localhost,1433;user id=sa;password=sqlPw3$secure'
 
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
