@@ -40,7 +40,7 @@ jobs:
       run: docker logs msssql
       
     - name: Application Integration Tests
-      run: dotnet test --filter FullyQualifiedName~IntegrationTests --configuration Release --no-build
+      run: dotnet test --filter FullyQualifiedName=IntegrationTests --configuration Release --no-build
       
     - name: Dump mssql docker logs after tests
       run: docker logs msssql
