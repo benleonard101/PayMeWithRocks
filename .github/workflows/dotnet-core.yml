@@ -13,8 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run sudo commands
-      run: sudo update-ca-certificates --fresh
       
     - name: App Settings Variable Substitution
       uses: microsoft/variable-substitution@v1
@@ -40,6 +38,9 @@ jobs:
       run: docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=sqlPw3$secure' -e 'MSSQL_PID=Developer' -p 1433:1433 --name msssql -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu
     - name: Dump mssql docker logs
       run: docker logs msssql
+      
+    - name: Run sudo commands
+      run: sudo update-ca-certificates --fresh
       
     - name: Application Integration Tests
       run: dotnet test --filter FullyQualifiedName~PayMeWithRocks.Application.IntegrationTests --configuration Release --no-build
