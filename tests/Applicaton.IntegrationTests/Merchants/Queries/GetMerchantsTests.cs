@@ -25,7 +25,7 @@ namespace PayMeWithRocks.Application.IntegrationTests.Merchants.Queries
             coldwaterMerchant.MerchantType.Should().Be(MerchantType.StandardMerchant);
 
             var raysCarwash = result.Merchants.First(x => x.MerchantName == "Rays Carwash");
-            raysCarwash.MerchantId.Should().Be(2);
+            raysCarwash.MerchantId.Should().Be(1);
             raysCarwash.MerchantType.Should().Be(MerchantType.PayFac);
         }
     }
